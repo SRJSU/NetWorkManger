@@ -28,3 +28,10 @@ def Index(request):
         return render(request, 'index.html', {'email': v})
     else:
         return redirect('/login/')
+
+
+def LogOut(request):
+    v = request.session.get('email')
+    if v:
+        request.session.delete('email')
+        return redirect('/login/')
