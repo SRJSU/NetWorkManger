@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.3, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>NavBar</title>
+</head>
+<body>
+    <div class="col-md-2 ">
+        <h1 class="bg-primary">Home</h1>
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation"><a href="#">Profile</a></li>
+            <li role="presentation"><a href="#">Messages</a></li>
+            <li role="presentation"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">PhoneNum</a></li>
+            <li role="presentation"><a href="#">Email</a></li>
+            <li role="presentation"><a href="#">School</a></li>
+            <li role="presentation"><a href="#">Sex</a></li>
+            <li role="presentation"><a href="#">Addree</a></li>
+            <li role="presentation"><a href="#">Messages</a></li>
+            <li role="presentation"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">PhoneNum</a></li>
+            <li role="presentation"><a href="#">Email</a></li>
+            <li role="presentation"><a href="#">School</a></li>
+            <li role="presentation"><a href="#">Sex</a></li>
+            <li role="presentation"><a href="#">Addree</a></li>
+        </ul>
+    </div>
+    <div class="col-md-10 ">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">Profile</a></li>
+            <li role="presentation"><a href="#">Messages</a></li>
+            <li class="presentation navbar-right"> <a href="#" class="navbar-link">Sign In As {{ email}}</a></li>
+        </ul>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th class="active">First Name</th>
+                <th class="success">Last Name</th>
+                <th class="info">Username</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row" class="active">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row" class="success">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row" class="info">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
