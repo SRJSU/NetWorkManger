@@ -14,4 +14,4 @@ class UserInfo(models.Model):
     info=models.TextField()
     PhoneNum=models.CharField(max_length=30)
     def __unicode__(self):
-        return self.UserEmail
+        return self.info
