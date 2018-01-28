@@ -26,7 +26,7 @@ def Login(request):
             else:
                 return render(request, 'login.html', {'info': "用户名/密码错误"})
         else:
-            return render(request, 'login.html', {'info': "用户名/密码错误"})
+            return render(request, 'login.html', {'info': "用户名/密码格式错误"})
 
 
 def Index(request):
