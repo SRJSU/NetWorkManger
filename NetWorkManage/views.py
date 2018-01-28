@@ -5,7 +5,7 @@ from NetWorkManage import models
 
 
 # Create your views here.
-from NetWorkManage.forms import UserModelForm
+from NetWorkManage.forms import UserModelForm, UserInfoForm
 
 
 def Login(request):
@@ -48,3 +48,27 @@ def LogOut(request):
         except:
             print("删除session错误")
         return redirect('/login/')
+
+
+def Register(request):
+    if request.method=='GET':
+        return render(request, 'register.html')
+    elif request.method=='POST':
+        objFrom=UserInfoForm(request.POST)
+        if objFrom.is_valid():
+            name = objFrom.clean().get('UserEmail')
+            pwd = objFrom.clean().get('UserPassword')
+            obj = models.User.objects.filter(UserEmail=name).first()
+            if not obj:
+                user=models.User(name,pwd)
+                user.save()
+                phonenum = objFrom.clean().get('PhoneNum')
+                intro = objFrom.clean().get('Introduction')
+                models.UserInfo.objects.filter(User__UserEmail__contains=name).create(info=intro,PhoneNum=phonenum)
+                return redirect('/Login/')
+            else:
+                info = '用户已经存在'
+        else:
+            info = '输入有错'
+        print(info)
+        return render(request, 'register.html',{'info':info})

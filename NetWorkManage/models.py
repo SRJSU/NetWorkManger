@@ -11,7 +11,7 @@ class User(models.Model):
 
 
 class UserInfo(models.Model):
-    User=models.ForeignKey('User',on_delete=models.CASCADE)
+    id=models.ForeignKey('User',on_delete=models.CASCADE,primary_key=True)
     info=models.TextField()
     PhoneNum=models.CharField(max_length=30)
     def __unicode__(self):

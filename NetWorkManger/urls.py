@@ -23,4 +23,5 @@ urlpatterns = [
     path('login/',views.Login,name='login'),
     path('index/',views.Index,name='index'),
     path('LogOut/',views.LogOut,name='Logout'),
+    path('Register/',views.Register,name='Register'),
 ]

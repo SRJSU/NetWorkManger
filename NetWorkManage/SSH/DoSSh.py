@@ -29,6 +29,6 @@ def UpLoadFil(host,name,key,LocalFile,RemoteFile):#主机，登录名，登录�
 
 # 测试
 if __name__ == '__main__':
-    remote=r'/root/FileTest2.sh'
+    remote=r'/root/FileTest77.sh'
     local=os.getcwd()+r'\LocalFile\Test.sh'
     UpLoadFil('45.63.20.37','root','D{7v$n@D$VEKMDBS',local,remote)

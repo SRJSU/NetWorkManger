@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Register</title>
+</head>
+<body class="text-center col-md-4 col-md-offset-4">
+{% if info %}
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+        <strong>Warning!</strong> {{ info }}
+    </div>
+{% endif %}
+<form action="" method="post" class="form-signin">{% csrf_token %}
+    <h1 class="h3 mb-3 font-weight-normal">填写注册信息</h1>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">请输入注册邮箱</h3>
+        </div>
+        <div class="panel-body">
+            <input type="email" class="form-control" name="UserEmail" placeholder="Email address" required>
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">请输入密码</h3>
+        </div>
+        <div class="panel-body">
+            <input type="password" class="form-control" name="UserPassword" placeholder="Password" required>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">请输入手机号码</h3>
+            </div>
+            <div class="panel-body">
+                <input type="number" class="form-control" name="PhoneNum" placeholder="PhoneNum" required>
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">请输入自我介绍</h3>
+            </div>
+            <div class="panel-body">
+                <input type="text" class="form-control" name="Introduction" placeholder="Introduction">
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        </div>
+</form>
+</body>
+</html>
