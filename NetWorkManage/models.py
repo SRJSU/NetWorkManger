@@ -9,9 +9,19 @@ class User(models.Model):
         return self.UserEmail
 
 
+
 class UserInfo(models.Model):
     User=models.ForeignKey('User',on_delete=models.CASCADE)
     info=models.TextField()
     PhoneNum=models.CharField(max_length=30)
     def __unicode__(self):
         return self.info
+
+
+
+class SSHHost(models.Model):
+    Host=models.CharField(max_length=15)
+    PWD=models.CharField(max_length=50)
+    def __unicode__(self):
+        return self.Host
+
