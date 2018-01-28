@@ -60,11 +60,12 @@ def Register(request):
             pwd = objFrom.clean().get('UserPassword')
             obj = models.User.objects.filter(UserEmail=name).first()
             if not obj:
-                user=models.User(name,pwd)
+                user=models.User(UserEmail=name,UserPassword=pwd)
                 user.save()
-                phonenum = objFrom.clean().get('PhoneNum')
+                phonenum = str(objFrom.clean().get('PhoneNum'))
                 intro = objFrom.clean().get('Introduction')
-                models.UserInfo.objects.filter(User__UserEmail__contains=name).create(info=intro,PhoneNum=phonenum)
+                models.UserInfo.objects.filter(User__UserEmai=name).create(info=intro,PhoneNum=phonenum)
+
                 return redirect('/Login/')
             else:
                 info = '用户已经存在'
