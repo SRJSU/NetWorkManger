@@ -24,5 +24,3 @@ class Article(models.Model):
     tag = models.ManyToManyField(Tag)  # 标签
     def __str__(self):
         return  self.title
-
-
