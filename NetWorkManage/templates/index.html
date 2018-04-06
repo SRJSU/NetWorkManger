@@ -1,74 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load static %}
-<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.3, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>NavBar</title>
-</head>
-<body>
-    <div class="col-md-2 ">
-        <h1 class="bg-primary">Home</h1>
-        <ul class="nav nav-pills nav-stacked">
-            <li role="presentation"><a href="#">Profile</a></li>
-            <li role="presentation"><a href="#">Messages</a></li>
-            <li role="presentation"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">PhoneNum</a></li>
-            <li role="presentation"><a href="#">Email</a></li>
-            <li role="presentation"><a href="#">School</a></li>
-            <li role="presentation"><a href="#">Sex</a></li>
-            <li role="presentation"><a href="#">Addree</a></li>
-            <li role="presentation"><a href="#">Messages</a></li>
-            <li role="presentation"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">PhoneNum</a></li>
-            <li role="presentation"><a href="#">Email</a></li>
-            <li role="presentation"><a href="#">School</a></li>
-            <li role="presentation"><a href="#">Sex</a></li>
-            <li role="presentation"><a href="#">Addree</a></li>
-        </ul>
+{% extends 'base.html' %}
+{% block title %}
+    <title>sun主页</title>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <main class="col-md-8 main-blok">
+            {% for artical in artical_list%}
+            <article class="post">
+                <div class="post-head">
+                    <h2 class="post-title"><a href="#">{{ artical.title }}</a></h2>
+                    <div class="post-meta">
+                        <span class="author">作者：<a href="#">{{ artical.author }}</a></span>
+                        <time class="post-date">时间：{{ artical.date_time }}</time>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>{{ artical.content }}</p>
+                </div>
+                <div class="post-permalink">
+                    <a href="#" class="btn btn-default">阅读全文</a>
+                </div>
+                <footer class="post-footer clearfix">
+                    <div class="pull-left tag-list">
+                        <i class="fa fa-folder-open-o"></i>
+                    </div>
+                    <div class="pull-right share">
+                    </div>
+                </footer>
+            </article>
+            {% endfor %}
+        </main>
+        <!--左侧结束-->
+        <!--=========右侧开始==========-->
+        <aside class="col-md-4 sidebar">
+            <!-- start widget -->
+            <div class="widget">
+                <h4 class="title">标签云</h4>
+                <div class="content tag-cloud">
+                    {% for tag in tag_list %}
+                    <a href="#">{{ tag.tag_name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </aside>
+        <!--=========END右侧==========-->
     </div>
-    <div class="col-md-10 ">
-        <ul class="nav nav-tabs">
-            <li role="presentation" class="active"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">Profile</a></li>
-            <li role="presentation"><a href="#">Messages</a></li>
-            <li class="presentation navbar-right"> <a href="/LogOut/" class="navbar-link">Log Out  {{ email}}</a></li>
-        </ul>
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th class="active">First Name</th>
-                <th class="success">Last Name</th>
-                <th class="info">Username</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row" class="active">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row" class="success">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row" class="info">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-</body>
-</html>
+{% endblock %}

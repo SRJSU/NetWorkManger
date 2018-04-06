@@ -3,5 +3,15 @@ from NetWorkManage import models
 # Register your models here.
 
 
-admin.register(models.User)
-admin.register(models.UserInfo)
+@admin.register(models.User)
+class AdminUser(admin.ModelAdmin):
+    pass
+
+
+@admin.register(models.Article)
+class AdminArtical(admin.ModelAdmin):
+    pass
+
+@admin.register(models.Tag)
+class AdminTag(admin.ModelAdmin):
+    pass
