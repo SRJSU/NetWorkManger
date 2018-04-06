@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from NetWorkManage import urls, views
+from Blog import urls, views
 
 urlpatterns = [
     path('',views.Index),

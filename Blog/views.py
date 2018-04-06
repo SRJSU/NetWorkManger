@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from NetWorkManage.models import User,Article,Tag
+from Blog.models import User,Article,Tag
 
 
 
