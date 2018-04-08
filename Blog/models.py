@@ -17,8 +17,9 @@ class Tag(models.Model):
         return self.tag_name
 
 class Article(models.Model):
-    title = models.CharField(max_length=200)  # 博客标题
+    title = models.CharField(max_length=30)  # 博客标题
     date_time = models.DateField(auto_now_add=True)  # 博客日期
+    digest=models.CharField(max_length=200,default="详情点击全文")
     content = models.TextField(blank=True, null=True)  # 文章正文
     author = models.ForeignKey(User, verbose_name=u'作者', on_delete=models.CASCADE)
     tag = models.ManyToManyField(Tag)  # 标签
