@@ -15,10 +15,10 @@
                     </div>
                 </div>
                 <div class="post-content">
-                    <p>{{ artical.content }}</p>
+                    <p>详情点击全文</p>
                 </div>
                 <div class="post-permalink">
-                    <a href="#" class="btn btn-default">阅读全文</a>
+                    <a href="{% url 'detail' artical.id %}" class="btn btn-default">阅读全文</a>
                 </div>
                 <footer class="post-footer clearfix">
                     <div class="pull-left tag-list">

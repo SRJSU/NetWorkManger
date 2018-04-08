@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>detail</title>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <main class="col-md-8 main-blok">
+            <article class="post">
+                <div class="post-head">
+                    <h2 class="post-title"><a href="#">{{ artical.title }}</a></h2>
+                    <div class="post-meta">
+                        <span class="author">作者：<a href="#">{{ artical.author }}</a></span>
+                        <time class="post-date">时间：{{ artical.date_time }}</time>
+                    </div>
+                </div>
+                <div class="post-content">
+                    {% autoescape off %}
+                    {{ artical.content}}
+                    {% endautoescape %}
+                </div>
+                <footer class="post-footer clearfix">
+                    <div class="pull-left tag-list">
+                        <i class="fa fa-folder-open-o"></i>
+                    </div>
+                    <div class="pull-right share">
+                    </div>
+                </footer>
+            </article>
+        </main>
+    </div>
+{% endblock %}

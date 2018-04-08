@@ -24,3 +24,5 @@ class Article(models.Model):
     tag = models.ManyToManyField(Tag)  # 标签
     def __str__(self):
         return  self.title
+    def get_absolute_url(self):
+        return 'blog/articles/%i/' % self.id
